@@ -117,11 +117,15 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICTION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
 
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-}
+} 
+
 
 AUTH_USER_MODEL = 'accounts.User'
