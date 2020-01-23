@@ -18,6 +18,7 @@ class CalendarEventReadSerializer(serializers.ModelSerializer):
     class Meta:
         model = CalendarEvent
         fields = '__all__'
+        read_only_fields = ('created_at', 'modified_at')
         extra_kwargs = {
             'id':{
                 'read_only':True,
