@@ -5,3 +5,5 @@
 .python-version
 
 *.pyc
+
+db.sqlite3

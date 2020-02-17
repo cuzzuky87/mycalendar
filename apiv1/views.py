@@ -12,6 +12,7 @@ class CalendarEventViewset(viewsets.ModelViewSet):
     serializer_class = CalendarEventReadSerializer
     permission_classes = (permissions.IsAuthenticated,IsOwnerOrReadOnly,)
 
+
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
@@ -20,3 +21,8 @@ class CalendarEventViewset(viewsets.ModelViewSet):
             return CalendarEventReadSerializer
         elif self.action == 'create':
             return CalendarEventCreateSerializer
+        elif self.action == 'retrieve':
+            return CalendarEventReadSerializer
+        elif self.action == 'update':
+            return CalendarEventCreateSerializer
+
