@@ -137,3 +137,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     'http://127.0.0.1:8080',
 #     'http://localhost:8080'
 # )
+
+# static files
+STATIC_FILES = '/static/'
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR,"static")
+]
