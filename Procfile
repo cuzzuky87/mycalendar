@@ -1,1 +1,1 @@
-web: gunicorn mycalendar.wsgi
+web: gunicorn config.wsgi
