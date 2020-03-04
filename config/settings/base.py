@@ -16,7 +16,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 ALLOWED_HOSTS = [
-    '0.0.0.0','127.0.0.1','localhosts','mycalendar-c.herokuapp.com'
+    '0.0.0.0','127.0.0.1','localhost','mycalendar-c.herokuapp.com'
 ]
 
 
