@@ -36,6 +36,7 @@ class CustomUserManager(UserManager):
         return self._create_user(email, password, **extra_fields)
 
     def activate_user(self,**extra_fields):
+        extra_fields.setdefault('is_active',False)
         pass
 
 
