@@ -37,3 +37,4 @@ class CalendarEventCreateSerializer(serializers.ModelSerializer):
                 'read_only':True,
             }
         }
+    

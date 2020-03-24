@@ -17,3 +17,10 @@ class CalendarEvent(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def save(self, *args, **kwargs):
+        dblbooking_query = CalendarEvent.objects.filter(end_at > self.start_at, start_at < self.end_at)
+        if dblbooking_query.first() is None:
+            super(CalendarEvent, self).save(*args,**kwargs)
+        else:
+            raise ValueError("The given event is overlaps the time of another one.")
