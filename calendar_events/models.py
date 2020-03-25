@@ -19,7 +19,8 @@ class CalendarEvent(models.Model):
         return self.title
     
     def save(self, *args, **kwargs):
-        dblbooking_query = CalendarEvent.objects.filter(end_at > self.start_at, start_at < self.end_at)
+        """calendar event is not allowed to be overlaping another events"""
+        dblbooking_query = CalendarEvent.objects.filter(end_at__gte=self.start_at, start_at__lte=self.end_at)
         if dblbooking_query.first() is None:
             super(CalendarEvent, self).save(*args,**kwargs)
         else:
