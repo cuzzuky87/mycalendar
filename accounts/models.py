@@ -82,4 +82,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def username(self):
         return self.email
-

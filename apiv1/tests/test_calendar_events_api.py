@@ -20,13 +20,13 @@ def sample_calendar_events(user, **params):
     defaults.update(params)
     return CalendarEvent.objects.create(user=user,**defaults)
 
-class CalendarEventApiTests(TestCase):
-    """Test CalendarEventApi"""
+# class CalendarEventApiTests(TestCase):
+#     """Test CalendarEventApi"""
 
-    def setUp(self):
-        self.client = APIClient()
-        self.user = get_user_model().objects.create_user(
-            "test@test.com",
-            "testpass"
-        )
-        self.client.force_authenticate(self.user)
+#     def setUp(self):
+#         self.client = APIClient()
+#         self.user = get_user_model().objects.create_user(
+#             "test@test.com",
+#             "testpass"
+#         )
+#         self.client.force_authenticate(self.user)
